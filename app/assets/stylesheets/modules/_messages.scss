@@ -1,0 +1,173 @@
+* {
+  box-sizing: border-box;
+}
+
+.wrapper{
+  display: flex;
+  height: 100vh;
+}
+
+.side_bar{
+  width: 300px;
+  background-color: #253141;
+  &__head{
+    height: 100px;
+    background-color: #253141;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &--name_box{
+      height: 20px;
+      width: 260px;
+      color: #ffffff;
+      font-weight: bold;
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      .left_item{
+        line-height: 20px;
+        font-size: 16px;
+      }
+      .right_item{
+        height: 20px;
+        width: 60px;
+        display: flex;
+        justify-content: flex-end;
+        &__btn{
+          height: 20px;
+          text-decoration: none;
+          color: #ffffff;
+          line-height: 20px;
+          padding-left: 5px;
+        }
+      }
+    }
+  }
+  &__bottom{
+    height: calc(100vh - 100px);
+    background-color: #2f3e51;
+    color: #ffffff;
+    font-weight: bold;
+    &--group{
+      padding:20px 20px 40px;
+      .group_name{
+        font-size: 15px;
+        margin-bottom: 5px;
+      }
+      .group_message{
+        font-size: 11px;
+      }
+    }
+  }
+}
+
+.main_chat{
+  width: calc(100% - 300px);
+  background-color: #ffffff;
+  &__top{
+    height: 100px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 40px;
+
+    &--head_left{
+      padding-top: 35px;
+      color: #333333;
+      font-size: 20px;
+      .group_member{
+        margin-top:15px ;
+        color: #999999;
+        font-size: 12px;
+      }
+    }
+      
+    &--edit{
+      line-height: 40px;
+      width: 72px;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      .edit_btn{
+        line-height: 40px;
+        height: 40px;
+        text-decoration: none;
+        border: 1px solid;
+        padding: 0 20px;
+        color: #38aef0;
+      }
+    }
+  }
+
+  &__center{
+    height: calc(100vh - 190px);
+    background-color: #fafafa;
+    padding-top: 35px;
+    padding-left: 40px;
+    &--comment{
+      .user{
+        display: flex;
+        color: #333333;
+        font-size: 16px;
+        padding-bottom: 12px;
+        &__date{
+          color: #999999;
+          font-size: 12px;
+          padding-left: 5px;
+        }
+      }
+      .user_comment{
+        color: #434a54;
+        font-size: 14px;
+        padding-bottom: 46px;
+      }
+    }
+  }
+
+  &__message{
+    height: 90px;
+    background-color: #d2d2d2;
+    padding: 20px 40px;
+    width: 100%;
+    &--container{
+      form{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        .box{
+          height: 50px;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          .box__text{
+            padding-left: 10px;
+            width: calc(100% - 50px);
+            border: none;
+          }
+          .box__image{
+            font-size: 25px;
+            padding-right: 10px;
+            background-color: #ffffff;
+            width: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            &--icon{
+              display: none;
+
+            }
+          } 
+        }
+      }
+      .send{
+        margin-left: 15px;
+        width: 100px;
+        background-color: #38aef0;
+        color: #ffffff;
+      }
+    }
+  }
+
+}
+
