@@ -1,0 +1,38 @@
+.main_chat
+  .main_chat__top
+    .main_chat__top--head_left
+      Test
+      .group_member
+        Member : aaa
+    .main_chat__top--edit
+      = link_to "#", class: "edit_btn" do
+        Edit
+        
+  .main_chat__center
+    .main_chat__center--comment
+      .user
+        maru 
+        .user__date
+          2020/02/20(Thu) 15:00
+      .user_comment
+        hello
+    
+    .main_chat__center--comment
+      .user
+        takeshi
+        .user__date
+          2020/02/20(Thu) 15:00
+      .user_comment
+        hey
+    
+
+  .main_chat__message
+    .main_chat__message--container
+      %form.new
+        .box
+          %input{type: "text", class: "box__text",placeholder:"type a message"}
+          %label{class: "box__image"}
+            = icon('fas','image')
+            %input{type: "file", class: "box__image--icon"}
+        %input{type: "submit", class: "send" ,value:"Send"}
+       
