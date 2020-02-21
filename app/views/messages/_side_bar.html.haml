@@ -2,11 +2,11 @@
   .side_bar__head
     .side_bar__head--name_box
       .left_item
-        maru 
+        = current_user.name
       .right_item
         = link_to "#",class:"right_item__btn" do
           = icon("far fa-edit", class: "right_item__btn--icon")
-        = link_to "#",class:"right_item__btn" do
+        = link_to edit_user_path(current_user), class: "right_item__btn" do
           = icon("fa fa-cog", class: "right_item__btn--icon")
 
       
