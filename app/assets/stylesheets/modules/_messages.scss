@@ -49,13 +49,18 @@
     color: #ffffff;
     font-weight: bold;
     &--group{
-      padding:20px 20px 40px;
-      .group_name{
-        font-size: 15px;
-        margin-bottom: 5px;
-      }
-      .group_message{
-        font-size: 11px;
+      a{
+        display: block;
+        text-decoration: none;
+        color: #ffffff;
+        padding:20px 20px 40px;
+        .group_name{
+          font-size: 15px;
+          margin-bottom: 5px;
+        }
+        .group_message{
+          font-size: 11px;
+        }
       }
     }
   }
@@ -129,38 +134,37 @@
     background-color: #d2d2d2;
     padding: 20px 40px;
     width: 100%;
-    &--container{
-      form{
+    .form{
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      .box{
+        height: 50px;
+        width: 100%;
         display: flex;
         justify-content: space-between;
-        width: 100%;
-        .box{
-          height: 50px;
-          width: 100%;
-          display: flex;
-          justify-content: space-between;
-          .box__text{
-            padding-left: 10px;
-            width: calc(100% - 50px);
-            border: none;
-          }
-          .box__image{
-            font-size: 25px;
-            padding-right: 10px;
-            background-color: #ffffff;
-            width: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            &--icon{
-              display: none;
-
-            }
-          } 
+        .box__text{
+          padding-left: 10px;
+          width: calc(100% - 50px);
+          border: none;
         }
+        .box__image{
+          font-size: 25px;
+          padding-right: 10px;
+          background-color: #ffffff;
+          width: 50px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          &--icon{
+            display: none;
+
+          }
+        } 
       }
       .send{
+        display: block;
         margin-left: 15px;
         width: 100px;
         background-color: #38aef0;

@@ -1,0 +1,9 @@
+.main_chat__center--comment
+  .user
+    = message.user.name
+    .user__date
+      = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+  .user_comment
+    - if message.content.present?
+      = message.content
+    = image_tag message.image.url if message.image.present?
