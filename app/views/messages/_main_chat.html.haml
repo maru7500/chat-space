@@ -1,38 +1,23 @@
 .main_chat
   .main_chat__top
     .main_chat__top--head_left
-      Test
+      = @group.name
       .group_member
-        Member : aaa
+        Member : 
+        = @group.users.pluck(:name).join(", ")
     .main_chat__top--edit
-      = link_to "#", class: "edit_btn" do
+      = link_to edit_group_path(@group), class: "edit_btn" do
         Edit
         
   .main_chat__center
-    .main_chat__center--comment
-      .user
-        maru 
-        .user__date
-          2020/02/20(Thu) 15:00
-      .user_comment
-        hello
-    
-    .main_chat__center--comment
-      .user
-        takeshi
-        .user__date
-          2020/02/20(Thu) 15:00
-      .user_comment
-        hey
-    
+    = render @messages
 
-  .main_chat__message
-    .main_chat__message--container
-      %form.new
+  = form_for [@group, @message] do |f|
+    .main_chat__message
+      .form
         .box
-          %input{type: "text", class: "box__text",placeholder:"type a message"}
-          %label{class: "box__image"}
+          = f.text_field :content, class: "box__text", placeholder: 'type a message'
+          = f.label :image, class: "box__image" do
             = icon('fas','image')
-            %input{type: "file", class: "box__image--icon"}
-        %input{type: "submit", class: "send" ,value:"Send"}
-       
+            = f.file_field :image, class: "box__image--icon"
+        = f.submit "Send", class: "send"
