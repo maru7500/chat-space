@@ -2,15 +2,19 @@ $(function(){
   
   function buildHTML(message){
     
+    var user_box =`
+    <div class="user">
+      ${message.name}
+        <div class="user__date">
+          ${message.date}
+        </div>
+    </div>`
+
     if (message.content && message.image ) {
+      
       var html = `
       <div class="main_chat__center--comment" data-message-id = ${message.id}>
-        <div class="user">
-          ${message.name}
-            <div class="user__date">
-              ${message.date}
-            </div>
-        </div>
+        ${user_box}
         <div class="user_comment">
           <div class="user_comment__content">
             ${message.content}
@@ -19,28 +23,18 @@ $(function(){
         </div>
       </div>`
     } else if (message.content){
-      var html = `
-      <div class="main_chat__center--comment" data-message-id = ${message.id}>
-        <div class="user">
-          ${message.name}
-            <div class="user__date">
-              ${message.date}
-            </div>
-        </div>
-        <div class="user_comment">
+       var html = `
+       <div class="main_chat__center--comment" data-message-id = ${message.id}>
+        ${user_box}
+       <div class="user_comment">
           ${message.content}
         </div>
       </div>`
     } else if (message.image){
       var html =`
       <div class="main_chat__center--comment" data-message-id = ${message.id}>
-        <div class="user">
-          ${message.name}
-            <div class="user__date">
-              ${message.date}
-            </div>
-        </div>
-        <div class="user_comment">
+        ${user_box}
+       <div class="user_comment">
           <img src=${message.image} >
         </div>
       </div>`
